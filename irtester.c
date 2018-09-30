@@ -3,7 +3,7 @@
 
 int main(int argc, char *argv[])
 {
-  int i;
+/*  int i; */
   wiringPiSetup () ;
   pinMode(0, INPUT);
   while(1) {
