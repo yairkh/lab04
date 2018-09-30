@@ -1,6 +1,9 @@
 CC=gcc
 CFLAGS=-lWarn -pedantic
 
+blink:	blink.o
+	$(CC) blink.o -lwiringPi  -o blink
+
 alarm:  alarm.o
 	$(CC) alarm.o -L. -lmyifttt -lcurl -lwiringPi  -o alarm
 
@@ -23,6 +26,9 @@ irtester.o:	irtester.c
 	$(CC) $(CFLAGGS) -c -ansi $<
 
 alarm.o:	alarm.c
+	$(CC) $(CFLAGS) -c -ansi $<
+
+blink.o:	blink.c
 	$(CC) $(CFLAGS) -c -ansi $<
 
 clean:
